@@ -3,20 +3,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ $app.name }}
+  name: "{{ $app.name }}"
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: argocd-infra
   source:
-    repoURL: {{ $.Values.repoUrl }}
+    repoURL: "{{ $.Values.repoUrl }}"
     targetRevision: HEAD
     path: "helm-charts/infra/{{ $app.name }}"
     directory:
       recurse: true
   destination:
-    namespace: {{ $app.namespace }}
+    namespace: "{{ $app.namespace }}"
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
