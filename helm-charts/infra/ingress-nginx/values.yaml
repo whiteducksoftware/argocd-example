@@ -10,5 +10,5 @@ ingress-nginx:
       enableHttps: true
       externalTrafficPolicy: Local
       type: LoadBalancer
-      #ipFamilyPolicy: ""
-      #ipFamilies: []
+      ipFamilyPolicy: ""
+      ipFamilies: []

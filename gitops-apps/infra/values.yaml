@@ -7,3 +7,8 @@ applications:
 
   - name: cert-manager
     namespace: cert-manager
+    ignoreDifferences:
+      - group: admissionregistration.k8s.io
+        kind: ValidatingWebhookConfiguration
+        jsonPointers:
+          - /webhooks/0/namespaceSelector/matchExpressions
