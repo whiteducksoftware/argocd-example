@@ -1,6 +1,7 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "podtato-head.fullname" . -}}
 {{- $svcPort := .Values.main.servicePort -}}
+{{- $svcName := .Values.main.repositoryBasename  -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1beta1
 {{- else -}}
@@ -35,7 +36,7 @@ spec:
           {{- range .paths }}
           - path: {{ . }}
             backend:
-              serviceName: {{ $fullName }}
+              serviceName: {{ $svcName }}
               servicePort: {{ $svcPort }}
           {{- end }}
     {{- end }}
