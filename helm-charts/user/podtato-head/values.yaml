@@ -16,7 +16,7 @@ main:
   servicePort: 9000
 hats:
   repositoryBasename: podtato-hats
-  tag: "v1-latest-dev"
+  tag: "v3-latest-dev"
   serviceType: ClusterIP
   servicePort: 9001
 leftLeg:
