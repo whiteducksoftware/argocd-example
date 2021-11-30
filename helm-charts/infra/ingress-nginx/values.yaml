@@ -10,3 +10,6 @@ ingress-nginx:
       enableHttps: true
       externalTrafficPolicy: Local
       type: LoadBalancer
+      ipFamilyPolicy: "SingleStack"
+      ipFamilies:
+        - IPv4
