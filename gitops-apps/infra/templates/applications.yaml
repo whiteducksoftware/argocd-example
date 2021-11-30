@@ -8,13 +8,11 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: argocd-infra
+  project: infra
   source:
     repoURL: "{{ $.Values.repoUrl }}"
     targetRevision: HEAD
     path: "helm-charts/infra/{{ $app.name }}"
-    directory:
-      recurse: true
   destination:
     namespace: "{{ $app.namespace }}"
     server: https://kubernetes.default.svc
