@@ -66,17 +66,20 @@ securityContext: {}
 
 # applies to podtato-main deployment only
 ingress:
-  enabled: false
-  annotations: {}
+  enabled: true
+  class: nginx
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
-      paths: []
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+    - host: podtato.demo.meisenzahl.org
+      paths:
+        - /
+  tls:
+    - secretName: podtato.demo.meisenzahl.org
+      hosts:
+        - podtato.demo.meisenzahl.org
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
