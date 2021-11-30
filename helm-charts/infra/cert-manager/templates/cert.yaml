@@ -1,0 +1,13 @@
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: ingress-certificate
+spec:
+  secretName: ingress-certificate
+  issuerRef: 
+    kind: ClusterIssuer
+    name: letsencrypt
+  commonName: "*.demo.meisenzahl.org"
+  dnsNames:
+    - "*.demo.meisenzahl.org"

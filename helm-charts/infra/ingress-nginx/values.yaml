@@ -1,0 +1,12 @@
+ingress-nginx:
+  controller:
+    ingressClass: nginx
+    extraArgs:
+      default-ssl-certificate: "cert-manager/ingress-certificate"
+    service:
+      annotations:
+      loadBalancerIP: 20.71.20.107 # Public IP defined in MC RG
+      enableHttp: false
+      enableHttps: true
+      externalTrafficPolicy: Local
+      type: LoadBalancer

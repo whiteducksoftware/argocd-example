@@ -1,0 +1,4 @@
+apiVersion: v2
+name: argocd-config
+version: 1.0.0
+description: Chart to deploy argo-cd project & apps

@@ -1,0 +1,9 @@
+repoUrl: https://github.com/whiteducksoftware/argocd-example.git
+
+applications:
+
+  - name: ingress-nginx
+    namespace: ingress-nginx
+
+  - name: cert-manager
+    namespace: cert-manager
