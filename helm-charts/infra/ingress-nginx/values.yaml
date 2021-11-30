@@ -6,7 +6,7 @@ ingress-nginx:
     service:
       annotations:
       loadBalancerIP: 20.71.20.107 # Public IP defined in MC RG
-      enableHttp: false
+      enableHttp: true
       enableHttps: true
       externalTrafficPolicy: Local
       type: LoadBalancer
