@@ -5,5 +5,32 @@ applications:
   - name: podtato-head
     namespace: podtato-head
 
-  - name: fred
-    namespace: fred
+  - name: fred1
+    namespace: fred1
+
+  - name: fred2
+    namespace: fred2
+
+  - name: fred3
+    namespace: fred3
+
+  - name: fred4
+    namespace: fred4
+
+  - name: fred5
+    namespace: fred5
+
+  - name: fred6
+    namespace: fred6
+
+  - name: fred7
+    namespace: fred7
+
+  - name: fred8
+    namespace: fred8
+
+  - name: fred9
+    namespace: fred9
+
+  - name: fred10
+    namespace: fred10
