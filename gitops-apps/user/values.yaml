@@ -34,3 +34,6 @@ applications:
 
   - name: fred10
     namespace: fred10
+
+  - name: fred11
+    namespace: fred11

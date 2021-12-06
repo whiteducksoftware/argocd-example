@@ -8,7 +8,7 @@ image:
   repository: whiteduck/sample-mvc
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: latest
+  tag: fred
 
 imagePullSecrets: []
 nameOverride: ""
@@ -37,7 +37,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterBalancer
+  type: ClusterIP
   port: 8080
 
 ingress:
@@ -46,16 +46,26 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
   hosts:
-    - host: fred5.demo.meisenzahl.org
+    - host: fred11.demo.meisenzahl.org
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls:
-    - secretName: fred5.demo.meisenzahl.org
+    - secretName: fred11.demo.meisenzahl.org
       hosts:
-        - fred5.demo.meisenzahl.org
+        - fred11.demo.meisenzahl.org
 
 resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
 
 autoscaling:
   enabled: false
