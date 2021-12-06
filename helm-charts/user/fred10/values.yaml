@@ -8,7 +8,7 @@ image:
   repository: whiteduck/sample-mvc
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: fred
+  tag: latest
 
 imagePullSecrets: []
 nameOverride: ""
