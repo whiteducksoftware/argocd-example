@@ -4,3 +4,6 @@ applications:
 
   - name: podtato-head
     namespace: podtato-head
+
+  - name: fred
+    namespace: fred
