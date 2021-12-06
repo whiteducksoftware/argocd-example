@@ -42,7 +42,7 @@ service:
 
 ingress:
   enabled: true
-  className: fred
+  className: nginx
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
   hosts:
