@@ -1,0 +1,7 @@
+---
+# Source: https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml
+ingress-nginx:
+  controller:
+    replicaCount: 2
+    service:
+      type: LoadBalancer

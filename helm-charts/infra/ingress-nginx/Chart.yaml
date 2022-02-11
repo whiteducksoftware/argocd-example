@@ -1,0 +1,12 @@
+---
+apiVersion: v2
+name: ingress-nginx
+version: 4.0.17
+description: Chart to deploy ingress-nginx
+
+dependencies:
+  # Source: https://github.com/kubernetes/ingress-nginx/blob/master/charts/ingress-nginx/Chart.yaml
+  # Changelog: https://github.com/kubernetes/ingress-nginx/blob/master/charts/ingress-nginx/CHANGELOG.md
+  - name: ingress-nginx
+    version: 4.0.17
+    repository: https://kubernetes.github.io/ingress-nginx

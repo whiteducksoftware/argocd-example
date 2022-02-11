@@ -1,0 +1,4 @@
+apiVersion: v2
+name: apps
+version: 1.0.0
+description: Chart to deploy user components

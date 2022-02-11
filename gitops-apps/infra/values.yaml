@@ -1,0 +1,14 @@
+repoUrl: https://github.com/whiteducksoftware/argocd-example.git
+
+applications:
+
+  - name: ingress-nginx
+    namespace: ingress-nginx
+
+  - name: cert-manager
+    namespace: cert-manager
+    ignoreDifferences:
+      - group: admissionregistration.k8s.io
+        kind: ValidatingWebhookConfiguration
+        jsonPointers:
+          - /webhooks/0/namespaceSelector/matchExpressions

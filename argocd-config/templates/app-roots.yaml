@@ -1,0 +1,22 @@
+{{- range $app := .Values.appRoots }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-root-{{ $app }}
+  namespace: argocd
+spec:
+  project: {{ $app }}
+  source:
+    repoURL: {{ $.Values.repoUrl }}
+    targetRevision: HEAD
+    path: "gitops-apps/{{ $app }}"
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+{{- end }}

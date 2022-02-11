@@ -1,0 +1,6 @@
+repoUrl: https://github.com/whiteducksoftware/argocd-example.git
+
+applications:
+
+  - name: fred
+    namespace: fred
